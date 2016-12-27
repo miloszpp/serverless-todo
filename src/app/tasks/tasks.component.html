@@ -1,0 +1,17 @@
+<h1>TODO list</h1>
+<div>
+  <form>
+    <div class="form-group">
+      <label for="content">Task</label>
+      <input class="form-control" type="text" name="content" #content />
+    </div>
+    <button type="button" class="btn btn-default" (click)="addTask(content.value)">Add</button>
+  </form>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let task of tasks | async">
+      {{ task.content }} <small>{{ task.created | date }}</small>
+    </li>
+  </ul>
+</div>
